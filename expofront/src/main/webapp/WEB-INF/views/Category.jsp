@@ -1,5 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <%@include file="Commonheader.jsp" %>
      <a href="login"></a>
      <h3 align="center">Manage Category</h3>
@@ -22,6 +20,25 @@
 			  <center><input type="submit" value="Insert Category"></center>
 			</td>
 		</tr>
+	</table>
+	<table>
+	        <tr>
+	            <td>Category ID</td>
+	            <td>Category Name</td>
+	            <td>Category Desc</td>
+	            <td>Operations</td>
+	        </tr>
+	        <c:forEach items="${categorylist}" var="category">
+	        <tr>
+	            <td>${category.categoryId}</td>
+	            <td>${category.categoryName}</td>
+	            <td>${category.categoryDesc}</td>
+	            <td>
+	            <a href="<c:url value="/deleteCategory/${category.categoryId}"></c:url>">DELETE
+	            </a>
+	            </td>  
+	        </tr>
+	        </c:forEach>
 	</table>
      </form>
 </body>
