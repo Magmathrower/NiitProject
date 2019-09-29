@@ -1,8 +1,10 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@include file="Commonheader.jsp" %>
      <a href="login"></a>
      <h3 align="center">Manage Category</h3>
-     
-	<form action="InsertCategory" method="post">
+    <c:url value="/InsertCategory" var="url"></c:url>
+	<form action="${url }" method="post">
      <table align="center">
 		<tr>
 			<td colspan="2"></td>

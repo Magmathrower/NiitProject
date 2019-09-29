@@ -12,4 +12,4 @@
         <a href="<c:url value="/register" ></c:url>"> Register </a>
         <a href="<c:url value="/contactUs" ></c:url>"> ContactUs </a> --> 
    </body>
-</html>
+</html>	

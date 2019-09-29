@@ -30,29 +30,30 @@ public class DBconfig {
 	{
 		DriverManagerDataSource datasource= new DriverManagerDataSource();
 		datasource.setDriverClassName("org.h2.Driver");
-		datasource.setUrl("jdbc:h2:tcp://localhost/~/cdtjepart2");
-		datasource.setUsername("cdtjerahulpart2");
-		datasource.setPassword("cdtjerahulpart2");
+		datasource.setUrl("jdbc:h2:tcp://localhost/~/ecom");
+		datasource.setUsername("rahul");
+		datasource.setPassword("rahul");
 		System.out.println("=========Data source Object is Created=========");
 		return datasource;
 	}
 		//Creating a session Factory Bean
 		
-		@Bean (name="sessionFactory")
+		@Bean 
 		public SessionFactory getSessionFactory()
 		{
 			Properties hibernateProperties=new Properties();
-			hibernateProperties.put("hibernate.hdm2ddl.auto","update");
+			hibernateProperties.put("hibernate.hbm2ddl.auto","update");
 			hibernateProperties.put("hibernate.dialect","org.hibernate.dialect.H2Dialect");
 			hibernateProperties.put("hibernate.show_sql", true);
-			LocalSessionFactoryBuilder factory=new LocalSessionFactoryBuilder(this.getH2DataSource());
+			LocalSessionFactoryBuilder factory=new LocalSessionFactoryBuilder(getH2DataSource());
 			factory.addProperties(hibernateProperties); 
 			
-			factory.addAnnotatedClass(Category.class);
-			factory.addAnnotatedClass(Product.class);
-			factory.addAnnotatedClass(Supplier.class);
-			//factory.addAnnotatedClass(UserDetail.class);
-			
+		
+		  factory.addAnnotatedClass(Category.class);
+		  factory.addAnnotatedClass(Product.class);
+		  factory.addAnnotatedClass(Supplier.class);
+		   factory.addAnnotatedClass(UserDetail.class);
+		 
 			SessionFactory sessionFactory=factory.buildSessionFactory();
 			System.out.println("=========SessionFactory Object Created===========");
 			return sessionFactory;
@@ -60,7 +61,7 @@ public class DBconfig {
 
 		//Creating a HibernateTransactionManager Bean
         
-		@Bean(name="txManager")
+		@Bean
 		public HibernateTransactionManager getHibernateTransactionManager(SessionFactory sessionFactory)
 		{
 			System.out.println("==========Hibernate Transaction Manager Object Created========");

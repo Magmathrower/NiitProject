@@ -8,12 +8,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-
-public class Category {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-
+public class Category{
+	
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 int categoryId;
+
 String categoryName;
 String categoryDesc;
 
@@ -36,6 +36,5 @@ public String getCategoryDesc() {
 public void setCategoryDesc(String categoryDesc) {
 	this.categoryDesc = categoryDesc;
 }
-
 
 }
