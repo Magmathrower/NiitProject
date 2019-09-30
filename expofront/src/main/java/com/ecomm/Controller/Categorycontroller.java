@@ -14,7 +14,7 @@ import com.ecomm.dao.CategoryDAO;
 import com.ecomm.model.Category;
 
 @Controller
-public class Categorycontoller {
+public class Categorycontroller {
    
 	@Autowired 
 	CategoryDAO categoryDAO;

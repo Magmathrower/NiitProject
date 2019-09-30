@@ -12,3 +12,4 @@
         <a href="register"> Register </a>
         <a href="contactUs"> ContactUs </a>
         <a href="Category">Manage Category </a>
+        <a href="Product">Manage Product </a>

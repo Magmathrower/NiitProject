@@ -1,5 +1,4 @@
 <%@include file="Commonheader.jsp" %>
-     <a href="login"></a>
      <h3 align="center">Manage Category</h3>
     <c:url value="/InsertCategory" var="url"></c:url>
 	<form action="${url }" method="post">
